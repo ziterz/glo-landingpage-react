@@ -1,6 +1,7 @@
 import Card from '@/components/Card';
+import Game from '@/types/game.type';
 
-export default function Featured() {
+export default function Featured({ games }: { games: Game[] }) {
   return (
     <div className="container mx-auto relative">
       <div className="flex justify-between items-center pt-12">
@@ -33,8 +34,8 @@ export default function Featured() {
         </ul>
       </div>
       <div className="grid grid-cols-5 gap-8 mt-12">
-        {Array.from({ length: 1 }).map((_, index) => (
-          <Card key={index} />
+        {games.map((game) => (
+          <Card key={game._id} game={game} />
         ))}
       </div>
     </div>
