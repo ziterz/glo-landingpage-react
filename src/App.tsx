@@ -1,4 +1,3 @@
-import '@/App.css';
 import Background from '@/assets/background.webp';
 import Slider from '@/components/Slider';
 import Navbar from '@/components/Navbar';
@@ -6,6 +5,7 @@ import Featured from '@/components/Featured';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Game from '@/types/game.type';
+import Footer from '@/components/Footer';
 
 function App() {
   const [games, setGames] = useState<Game[]>([]);
@@ -22,15 +22,14 @@ function App() {
   return (
     <>
       <Navbar />
-      <section className="absolute top-0 left-0 right-0 h-100 w-100">
-        <img
-          src={Background}
-          alt=""
-          className="absolute top-0 left-0 right-0 h-100 w-100"
-        />
+      <div
+        className="relative inset-0 overflow-hidden"
+        style={{ background: `url(${Background})` }}
+      >
         <Slider />
         <Featured games={games} />
-      </section>
+        <Footer />
+      </div>
     </>
   );
 }

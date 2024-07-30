@@ -2,24 +2,54 @@ import Logo from '@/assets/logo.png';
 
 export default function Navbar() {
   return (
-    <nav className="w-full h-16 top-0 z-50 sticky">
-      <div className="bg-slate-700 backdrop-blur-xl bg-opacity-80 h-16 left-4 right-4 box-border absolute top-4 rounded-lg flex items-center px-5 py-2">
-        <img src={Logo} alt="Logo" className="h-10" />
-        <ul className="text-white font-bold text-xl">
-          <li className="inline-block px-4 py-2 ">
-            <a href="#">Warcraft</a>
+    <nav className="w-100 z-50 sticky top-0">
+      <div className="bg-slate-800 backdrop-blur-xl bg-opacity-80 h-16 left-4 right-4 box-border absolute top-4 rounded-lg flex items-center justify-between">
+        <div className="flex text-xl font-semibold items-center">
+          <img src={Logo} alt="GameLevelOne" className="h-10 pl-3 pr-2" />
+          <div className="uppercase text-2xl">
+            Game<span className="text-red-500">Level</span>One
+          </div>
+        </div>
+        <ul className="text-white font-bold text-lg pr-3">
+          <li className="inline-block">
+            <a
+              href="#"
+              className="px-5 py-3 hover:rounded-md hover:bg-slate-700 hover:bg-opacity-50 transtiion-all duration-100"
+            >
+              Warcraft
+            </a>
           </li>
-          <li className="inline-block px-4 py-2 ">
-            <a href="#">Diablo</a>
+          <li className="inline-block">
+            <a
+              href="#"
+              className="px-5 py-3 hover:rounded-md hover:bg-slate-700 hover:bg-opacity-50 transtiion-all duration-100"
+            >
+              Diablo
+            </a>
           </li>
-          <li className="inline-block px-4 py-2 ">
-            <a href="#">Overwatch</a>
+          <li className="inline-block">
+            <a
+              href="#"
+              className="px-5 py-3 hover:rounded-md hover:bg-slate-700 hover:bg-opacity-50 transtiion-all duration-100"
+            >
+              Overwatch
+            </a>
           </li>
-          <li className="inline-block px-4 py-2 ">
-            <a href="#">StartCraft</a>
+          <li className="inline-block">
+            <a
+              href="#"
+              className="px-5 py-3 hover:rounded-md hover:bg-slate-700 hover:bg-opacity-50 transtiion-all duration-100"
+            >
+              StartCraft
+            </a>
           </li>
-          <li className="inline-block px-4 py-2 ">
-            <a href="#">Heroes of the Storm</a>
+          <li className="inline-block">
+            <a
+              href="#"
+              className="px-5 py-3 ml-5 rounded-md bg-black hover:bg-slate-900"
+            >
+              Try our games
+            </a>
           </li>
         </ul>
       </div>

@@ -1,9 +1,10 @@
 import Card from '@/components/Card';
 import Game from '@/types/game.type';
+import Button from './Button';
 
 export default function Featured({ games }: { games: Game[] }) {
   return (
-    <div className="container mx-auto relative">
+    <div className="container mx-auto relative box-content overflow-hidden">
       <div className="flex justify-between items-center pt-12">
         <h2 className="text-4xl uppercase font-semibold">Featured Games</h2>
         <ul className="flex gap-3">
@@ -37,6 +38,9 @@ export default function Featured({ games }: { games: Game[] }) {
         {games.map((game) => (
           <Card key={game._id} game={game} />
         ))}
+      </div>
+      <div className="mx-auto text-center my-20">
+        <Button />
       </div>
     </div>
   );
