@@ -9,12 +9,20 @@ import Footer from '@/components/Footer';
 
 function App() {
   const [games, setGames] = useState<Game[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [filteredGames, setFilteredGames] = useState<Game[]>([]);
 
   const fetchGames = async () => {
-    const { data } = await axios.get('http://localhost:3000/v1/games');
-    setGames(data.games);
-    setFilteredGames(data.games);
+    try {
+      setIsLoading(true);
+      const { data } = await axios.get('http://localhost:3000/v1/games');
+      setGames(data.games);
+      setFilteredGames(data.games);
+      setIsLoading(false);
+    } catch (error) {
+      console.error(error);
+      setIsLoading(false);
+    }
   };
 
   const filterGames = (platform: string) => {
@@ -56,7 +64,17 @@ function App() {
         style={{ background: `url(${Background})` }}
       >
         <Slider />
-        <Featured games={filteredGames} filterGames={filterGames} />
+        {isLoading && (
+          <div className="flex justify-center items-center ">
+            <span className="text-white text-2xl font-semibold my-32">
+              Fetching games...
+            </span>
+          </div>
+        )}
+        {games.length >= 0 && !isLoading && (
+          <Featured games={filteredGames} filterGames={filterGames} />
+        )}
+
         <Footer />
       </div>
     </>

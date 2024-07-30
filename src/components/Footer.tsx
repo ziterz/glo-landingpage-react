@@ -9,12 +9,12 @@ export default function Footer() {
         className="rounded-3xl"
       />
       <div className="absolute top-0 left-0 w-full">
-        <div className="flex flex-col justify-center w-1/2 my-24 ml-16 text-center">
-          <img src={Logo} alt="Logo" className="w-32 mx-auto" />
-          <h1 className="text-4xl font-semibold mt-4 uppercase">
+        <div className="flex flex-col justify-center w-1/2 my-12 lg:my-24 ml-2 lg:ml-16 text-center">
+          <img src={Logo} alt="Logo" className="w-12 lg:w-32 mx-auto" />
+          <h1 className="text-2xl lg:text-4xl font-semibold mt-4 uppercase">
             Game<span className="text-red-500">Level</span>One
           </h1>
-          <span className="text-xl font-semibold mt-5">
+          <span className="text-xl font-semibold mt-5 hidden lg:block">
             GLO is a digital-based technology company that focuses on branding,
             promotion and advertising using the games method. <br />
             <br />

@@ -4,6 +4,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import './Slider.css';
 
 interface SliderItem {
   backgroundImage: string;
@@ -44,36 +45,38 @@ export default function Slider() {
     <>
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
-        spaceBetween={30}
+        spaceBetween={24}
         slidesPerView={1.2}
         centeredSlides={true}
-        pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log('slide change')}
         loop
         navigation
         autoplay
+        style={{
+          boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.1)',
+        }}
       >
         {sliderImages.map((slide, index) => (
           <SwiperSlide key={index}>
             <div
-              className="h-[700px] bg-cover bg-no-repeat bg-center flex items-center justify-start align-middle box-content overflow-hidden"
+              className="h-[500px] lg:h-[700px] bg-cover bg-no-repeat bg-center flex items-center justify-start align-middle box-content overflow-hidden"
               style={{ backgroundImage: `url(${slide.backgroundImage})` }}
             >
-              <div className="container pl-24 w-1/2">
+              <div className="container lg:pl-24 w-2/3 lg:w-1/2 mx-auto lg:ml-0 lg:mr-auto text-center lg:text-left">
                 <picture>
                   <source srcSet={slide.logoUri} />
                   <img
                     src={slide.logoUri}
                     alt="Logo"
-                    className="w-56 h-auto mb-5"
+                    className="w-56 h-auto mb-5 mx-auto lg:ml-0 lg: mr-auto"
                   />
                 </picture>
-                <h1 className="text-6xl text-white font-semibold mb-5">
+                <h1 className="text-4xl lg:text-6xl text-white font-semibold mb-5">
                   {slide.title}
                 </h1>
-                <span className="text-2xl text-slate-300">
+                <span className="hidden lg:block text-2xl text-slate-300">
                   {slide.subtitle}
                 </span>
               </div>

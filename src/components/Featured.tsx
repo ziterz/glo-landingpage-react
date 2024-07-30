@@ -1,7 +1,6 @@
 import Card from '@/components/Card';
 import Game from '@/types/game.type';
 import Button from './Button';
-import { useState } from 'react';
 
 export default function Featured({
   games,
@@ -12,9 +11,9 @@ export default function Featured({
 }) {
   return (
     <div className="container mx-auto relative box-content overflow-hidden">
-      <div className="flex justify-between items-center pt-12">
+      <div className="flex flex-col md:flex-row justify-between items-center pt-12">
         <h2 className="text-4xl uppercase font-semibold">Featured Games</h2>
-        <ul className="flex gap-3">
+        <ul className="flex gap-3 mt-5 md:mt-0">
           <li>
             <a
               href="#"
@@ -65,7 +64,7 @@ export default function Featured({
           </li>
         </ul>
       </div>
-      <div className="grid grid-cols-5 gap-8 mt-12">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 mt-12">
         {games.map((game) => (
           <Card key={game._id} game={game} />
         ))}
