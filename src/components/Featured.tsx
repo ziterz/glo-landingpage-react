@@ -1,8 +1,15 @@
 import Card from '@/components/Card';
 import Game from '@/types/game.type';
 import Button from './Button';
+import { useState } from 'react';
 
-export default function Featured({ games }: { games: Game[] }) {
+export default function Featured({
+  games,
+  filterGames,
+}: {
+  games: Game[];
+  filterGames: (platform: string) => void;
+}) {
   return (
     <div className="container mx-auto relative box-content overflow-hidden">
       <div className="flex justify-between items-center pt-12">
@@ -11,7 +18,23 @@ export default function Featured({ games }: { games: Game[] }) {
           <li>
             <a
               href="#"
-              className="px-5 py-1.5 rounded-full bg-white bg-opacity-15 uppercase text-md font-semibold hover:bg-opacity-25"
+              onClick={(e) => {
+                e.preventDefault();
+                filterGames('All');
+              }}
+              className="px-5 py-1.5 rounded-full bg-white bg-opacity-15 uppercase text-md font-semibold hover:bg-opacity-25 focus:bg-blue-500"
+            >
+              All
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                filterGames('PC');
+              }}
+              className="px-5 py-1.5 rounded-full bg-white bg-opacity-15 uppercase text-md font-semibold hover:bg-opacity-25 focus:bg-blue-500"
             >
               PC
             </a>
@@ -19,7 +42,11 @@ export default function Featured({ games }: { games: Game[] }) {
           <li>
             <a
               href="#"
-              className="px-5 py-1.5 rounded-full bg-white bg-opacity-15 uppercase text-md font-semibold hover:bg-opacity-25"
+              onClick={(e) => {
+                e.preventDefault();
+                filterGames('Console');
+              }}
+              className="px-5 py-1.5 rounded-full bg-white bg-opacity-15 uppercase text-md font-semibold hover:bg-opacity-25 focus:bg-blue-500"
             >
               Console
             </a>
@@ -27,7 +54,11 @@ export default function Featured({ games }: { games: Game[] }) {
           <li>
             <a
               href="#"
-              className="px-5 py-1.5 rounded-full bg-white bg-opacity-15 uppercase text-md font-semibold hover:bg-opacity-25"
+              onClick={(e) => {
+                e.preventDefault();
+                filterGames('Mobile');
+              }}
+              className="px-5 py-1.5 rounded-full bg-white bg-opacity-15 uppercase text-md font-semibold hover:bg-opacity-25 focus:bg-blue-500"
             >
               Mobile
             </a>

@@ -53,6 +53,7 @@ export default function Slider() {
         onSlideChange={() => console.log('slide change')}
         loop
         navigation
+        autoplay
       >
         {sliderImages.map((slide, index) => (
           <SwiperSlide key={index}>
@@ -63,7 +64,11 @@ export default function Slider() {
               <div className="container pl-24 w-1/2">
                 <picture>
                   <source srcSet={slide.logoUri} />
-                  <img src={slide.logoUri} alt="Logo" className="w-56 h-auto" />
+                  <img
+                    src={slide.logoUri}
+                    alt="Logo"
+                    className="w-56 h-auto mb-5"
+                  />
                 </picture>
                 <h1 className="text-6xl text-white font-semibold mb-5">
                   {slide.title}

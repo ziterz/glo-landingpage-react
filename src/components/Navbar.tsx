@@ -45,7 +45,7 @@ export default function Navbar() {
           </li>
           <li className="inline-block">
             <a
-              href="#"
+              href="https://glogames.biz/direct/samplehighstack"
               className="px-5 py-3 ml-5 rounded-md bg-black hover:bg-slate-900"
             >
               Try our games
