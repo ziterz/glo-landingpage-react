@@ -64,7 +64,7 @@ export default function Featured({
           </li>
         </ul>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 mt-12">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 mt-12 mx-4 lg:mx-0">
         {games.map((game) => (
           <Card key={game._id} game={game} />
         ))}
